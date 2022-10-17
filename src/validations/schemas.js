@@ -15,23 +15,22 @@ const schemaAttUser = yup.object().shape({
   nome: yup.string().required(),
   email: yup.string().email().required(),
   senha: yup.string().min(8).max(15),
-  cpf: yup.string().length(11).nullable(),
-  telefone: yup.string().length(12).nullable(),
+  cpf: yup.string().length(14).nullable(),
+  telefone: yup.string().length(15).nullable(),
 });
 
 const schemaAddClient = yup.object().shape({
   nome: yup.string().required(),
   email: yup.string().email().required(),
-  cpf: yup.string().required().length(11),
-  telefone: yup.string().required().length(11),
-  cep: yup.string().length(8).nullable(),
+  cpf: yup.string().required().length(14),
+  telefone: yup.string().required().length(15),
+  cep: yup.string().length(9).nullable(),
   logradouro: yup.string(),
   complemento: yup.string(),
   bairro: yup.string(),
   cidade: yup.string(),
   estado: yup.string(),
 });
-
 const schemaAddCharges = yup.object().shape({
   id_cliente: yup.number().required(),
   descricao: yup.string(),
